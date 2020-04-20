@@ -6,7 +6,7 @@ For example:
 when running:
 
 ```
-clj -m cljs.main -co '{:infer-externs true}' -c app.core
+clj -m cljs.main --verbose --target node  --optimizations advanced -c app.core
 ```
 
 observe:
