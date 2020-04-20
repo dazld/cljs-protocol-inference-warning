@@ -1,38 +1,22 @@
 (ns app.core
   (:require [clojure.test :refer [is]]))
 
-(defprotocol Foo
-  (bar [this])
-  (baz [this]))
+(set! *warn-on-infer* true)
 
-(defrecord Thing [a b c]
-    Foo
-    (bar [_]
-      (case :a
-        :b {}
-        :a (js/Promise.resolve {})))
-    (baz [_]
-      (let [a 1
-            b 2]
-        (-> (js/Promise.resolve)
-            (.then (fn []
-                     (prn ::baz))))))) 
+(defprotocol IFoo
+  (bar [this]))
+
+(defrecord Thing [a]
+  IFoo
+  (bar [_]
+    (+ 1 1)))
+       
+
+(def a (map->Thing {:a 1}))
+
+(prn ::bar (bar a))
 
 
-
-
-
-
-
-(def a (map->Thing {:a 1 :b 2 :c 3}))
-
-(-> (bar a)
-    (.then (fn [d] (prn ::another d)))
-    (.then #(baz a)))
-
-(-> a
-    (baz)
-    (.then (fn [] (prn ::done))))
 
 
   
