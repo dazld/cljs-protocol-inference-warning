@@ -3,9 +3,14 @@
 
 (set! *warn-on-infer* true)
 
+;; No inference warnings
+(defrecord Bar [])
+
+;; Inference warnings
 (defprotocol IFoo
   (bar [this]))
 
+;; Inference warnings
 (defrecord Thing [a]
   IFoo
   (bar [_]
