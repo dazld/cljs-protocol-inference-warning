@@ -10,22 +10,11 @@
 (defprotocol IFoo
   (bar [this]))
 
-;; Inference warnings
 (defrecord Thing [a]
   IFoo
   (bar [_]
-    (+ 1 1)))
-       
+    (+ a 1)))
 
 (def a (map->Thing {:a 1}))
 
 (prn ::bar (bar a))
-
-
-
-
-  
-
-
-
-

@@ -28,6 +28,4 @@ WARNING: Cannot infer target type in expression (. (. Thing -prototype) -app$cor
 
 ## notes
 
-Something is stateful about these messages, on the first invocation of the command above, warnings are printed. On subsequent invocations, they are not.
-
-Perform `rm -rf out` between invocations of the above command to consistently see warnings printed.
+Perform `rm -rf out` between invocations of the above command to consistently see warnings printed, if not changing any code.
