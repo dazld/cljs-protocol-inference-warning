@@ -1,5 +1,12 @@
 
-Is it possible at all to avoid inference warnings on protocols in clojurescript?
+### FIXED
+
+Fixed on https://github.com/clojure/clojurescript/commit/6a6e4e30f14b38a20b383d38e89c1f2604803cf0
+
+--
+
+
+~~Is it possible at all to avoid inference warnings on protocols in clojurescript?~~
 
 For example:
 
